@@ -1,27 +1,30 @@
-#include <string>
-#include <iostream>
+#include "Date_Time.h"
 
-using namespace std;
-
-class Date_Time {
-	int minutes;
-	int hours;
-	int day;
-	int month;
-	int year;
-public: 
-	Date_Time(int min, int hr, int d, int mon, int y) { minutes = min; hours = hr; day = d; month = mon; year = y;};
-	void AddMinutes(int min) { minutes = minutes + min; };
-	void returnDate() { cout << minutes; cout << ":"; cout << hours; cout << ":"; cout <<  day; cout << ":"; cout << month; cout <<  ":"; cout <<  year; cout << "\n";};
-	string ToString();
-};
-
-
-int main() {
-	Date_Time *date = new Date_Time(1,1,1,1,1);
-	date->returnDate();
-	return 0;
+Date_Time::Date_Time(int min, int hr, int d, int mon, int y) {
+	minutes = min;
+	hours = hr;
+	day = d;
+	month = mon;
+	year = y;
 }
 
+
+void Date_Time::AddMinutes(int min) {
+	minutes = minutes + min;
+}
+
+
+void Date_Time::returnDate() {
+	cout << minutes;
+	cout << ":";
+	cout << hours;
+	cout << ":";
+	cout << day;
+	cout << ":";
+	cout << month;
+	cout << ":";
+	cout << year;
+	cout << "\n";
+}
 
 
