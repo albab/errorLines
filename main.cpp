@@ -1,7 +1,9 @@
 #include <iostream>
+#include <sstream>
 #include "Date_Time.h"
 #include "HubList.h"
 #include "FlightList.h"
+
 
 using namespace std;
 
@@ -43,7 +45,7 @@ int main() {
 	ifstream flightfile ("Flight.csv");
 	if (flightfile.is_open()) {
 		while (getline(flightfile,line2) ) { // Skip first line
-			while(getline(flightfile,flightNumber,',')) { 				
+				getline(flightfile,flightNumber,','); 			
 				getline(flightfile,priceString,',');
 				price = atof(priceString.c_str());
 				getline(flightfile,hubSource,',');
@@ -53,16 +55,20 @@ int main() {
 				duration = atoi(durationString.c_str());
 				getline(flightfile,flightCompany,',');
 				flightList.Append(flightNumber,price,hubSource,hubDestination,departure,duration,flightCompany);
-			}
 		} 
 	
 	flightList.Print();
 	flightfile.close();
+	
+	
 	} else {cout << "WARNING >> Can't open: Flight file"; }
 	getchar();
 
 	return 0;
 }
+
+
+
 
 
 

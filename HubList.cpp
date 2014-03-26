@@ -27,7 +27,7 @@ void HubList::Print() {
     	} else {
 		// Traverse and print
     		do {
-			cout << tmp->Name();
+			cout << tmp->Location();
         		cout << " --> ";
         		tmp = tmp->Next();
     		} while ( tmp != NULL );

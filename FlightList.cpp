@@ -36,6 +36,8 @@ void FlightList::Print() {
 			cout << tmp->FlightDeparture();
 			cout << ", ";
 			cout << tmp->FlightDuration();
+			cout << ", ";
+			cout << tmp->FlightCompany();
         		cout << " --> ";
         		tmp = tmp->Next();
     		} while ( tmp != NULL );
