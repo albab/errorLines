@@ -1,5 +1,4 @@
 #include <iostream>
-#include <sstream>
 #include "Date_Time.h"
 #include "HubList.h"
 #include "FlightList.h"
@@ -7,12 +6,7 @@
 
 using namespace std;
 
-int main() {
-	Date_Time *date = new Date_Time(12,12,12,12,12);
-	cout << "Date Test: ";
-	date->returnDate();
-	
-	
+int main() {	
 	HubList hubList;
 	
 	string line,name,location;
@@ -66,7 +60,6 @@ int main() {
 
 	return 0;
 }
-
 
 
 
