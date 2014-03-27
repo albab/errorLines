@@ -65,6 +65,16 @@ FlightNode* FlightNode::Next() {
 	return next;
 }
 
+float FlightNode::getBaggageFees() {
+	return baggageFees;
+}
+
+int FlightNode::getDelay() {
+	return delay;
+}
+
+
+
 
 
 

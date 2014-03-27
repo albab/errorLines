@@ -23,6 +23,8 @@ class FlightNode {
 	string source;
 	string destination;
     	FlightNode* next;
+	float baggageFees;
+	int delay;
 
 public:
 	FlightNode();
@@ -37,6 +39,8 @@ public:
 	int FlightDuration();
 	string FlightCompany();
     	FlightNode* Next();
+	virtual float getBaggageFees();
+	virtual int getDelay();
 };
 
 #endif
