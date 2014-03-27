@@ -6,6 +6,7 @@
 #include <fstream>
 #include <sstream>
 #include "FlightNode.h"
+#include "HubNode.h"
 #include "Date_Time.h"
 
 class FlightNode;
@@ -19,7 +20,7 @@ private:
 public:
 	FlightList();
 	void Print();
-    	void Append(string aFlightNumber, double aPrice,  string aSource,string aDestination, string aDeparture, int aDuration, string aFlightCompany);
+    	void Append(string aFlightNumber, double aPrice, string aSource, string aDestination, string aDeparture, int aDuration, string aFlightCompany);
 };
 
 

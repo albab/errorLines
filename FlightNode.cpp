@@ -6,7 +6,7 @@ FlightNode::FlightNode() {
 	next = NULL;
 }
 
-FlightNode::FlightNode(string aFlightNumber, double aPrice,  string aSource, string aDestination, string aDeparture, int aDuration, string aFlightCompany, FlightNode* aNext) {
+FlightNode::FlightNode(string aFlightNumber, double aPrice,  string aSource, string aDestination, Date_Time* aDeparture, int aDuration, string aFlightCompany, FlightNode* aNext) {
 	flightNumber = aFlightNumber;
 	flightCompany = aFlightCompany;
 	departure = aDeparture;
@@ -17,7 +17,7 @@ FlightNode::FlightNode(string aFlightNumber, double aPrice,  string aSource, str
 	next = aNext;
 }
 
-void FlightNode::SetVar(string aFlightNumber, double aPrice,  string aSource, string aDestination, string aDeparture, int aDuration, string aFlightCompany) {
+void FlightNode::SetVar(string aFlightNumber, double aPrice,  string aSource, string aDestination, Date_Time* aDeparture, int aDuration, string aFlightCompany) {
 	flightNumber = aFlightNumber;
 	flightCompany = aFlightCompany;
 	price = aPrice;
@@ -57,7 +57,7 @@ string FlightNode::FlightSource() {
 }
 
 string FlightNode::FlightDeparture() {
-	return departure;
+	return departure->ToString();
 }
 
 

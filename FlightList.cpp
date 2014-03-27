@@ -74,7 +74,8 @@ void FlightList::Append(string aFlightNumber, double aPrice, string aSource,stri
 	
 	//Lets make a new flight
     	FlightNode* newFlight = new FlightNode();
-    	newFlight->SetVar(aFlightNumber,aPrice,aSource,aDestination,aDeparture,aDuration,aFlightCompany);
+
+    	newFlight->SetVar(aFlightNumber,aPrice,aSource,aDestination,date,aDuration,aFlightCompany);
     	newFlight->SetNext(NULL);
 
     	//Temporary flight pointer

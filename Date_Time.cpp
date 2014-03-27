@@ -6,6 +6,7 @@ Date_Time::Date_Time(int min, int hr, int d, int mon, int y) {
 	day = d;
 	month = mon;
 	year = y;
+	time = to_string(minutes) + ":" + to_string(hours) + ":" + to_string(day) + ":" + to_string(month) + ":" + to_string(year);
 }
 
 
@@ -27,4 +28,9 @@ void Date_Time::returnDate() {
 	cout << "\n";
 }
 
+
+
+string Date_Time::ToString() {
+	return time;
+}
 

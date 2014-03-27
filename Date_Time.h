@@ -13,6 +13,7 @@ private:
 	int day;
 	int month;
 	int year;
+	string time;
 public: 
 	Date_Time(int min, int hr, int d, int mon, int y);
 	void AddMinutes(int min);

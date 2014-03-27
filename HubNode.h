@@ -11,14 +11,13 @@ using namespace std;
 
 //HubNode Class
 class HubNode {
-	int data;
     	string name;
     	string location;
     	HubNode* next;
 
 public:
 	HubNode();
-	HubNode(int data, string name, string location, HubNode* next);
+	HubNode(string name, string location, HubNode* next);
 	void SetVar(string aName, string aLocation);
 	void SetNext(HubNode* aNext);
 	string Name();

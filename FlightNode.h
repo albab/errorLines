@@ -5,6 +5,7 @@
 #include <iostream>
 #include <fstream>
 //#include "HubNode.h"
+#include "Date_Time.h"
 
 using namespace std;
 
@@ -14,7 +15,7 @@ using namespace std;
 class FlightNode {
 	string flightNumber;
 	string flightCompany;
-	string departure;
+	Date_Time* departure;
 	double price;
 	int duration;
 //	HubNode *destination;
@@ -25,8 +26,8 @@ class FlightNode {
 
 public:
 	FlightNode();
-	FlightNode(string flightNumber, double price,  string source, string destination, string departure, int duration, string flightCompany, FlightNode* next);
-    	void SetVar(string flightNumber, double price,  string source, string destination, string departure, int duration, string flightCompany);
+	FlightNode(string flightNumber, double price,  string source, string destination, Date_Time* departure, int duration, string flightCompany, FlightNode* next);
+    	void SetVar(string flightNumber, double price,  string source, string destination, Date_Time* departure, int duration, string flightCompany);
     	void SetNext(FlightNode* aNext);
     	string FlightNumber();
 	double FlightPrice();
