@@ -54,6 +54,7 @@ int main() {
 	
 	
 	} else {cout << "WARNING >> Can't open: Flight file"; }
+
 	
 	
 	getchar();

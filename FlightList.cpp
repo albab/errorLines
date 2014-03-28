@@ -70,7 +70,7 @@ void FlightList::Append(string aFlightNumber, double aPrice, string aSource,stri
 	monthInt = atoi(month.c_str());
 	yearInt = atoi(year.c_str());
 	Date_Time *date = new Date_Time(minutesInt,hoursInt,dayInt,monthInt,yearInt);
-	date->returnDate();
+//	date->returnDate(); Date test call
 	
 	//Lets make a new flight
     	FlightNode* newFlight = new FlightNode();
