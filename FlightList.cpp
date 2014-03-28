@@ -29,11 +29,11 @@ void FlightList::Print() {
 			cout << ", ";
 			cout << tmp->FlightPrice();
 			cout << ", ";
+			cout << tmp->FlightDeparture();
+			cout << ", ";
 			cout << tmp->FlightSource();
 			cout << ", ";
 			cout << tmp->FlightDestination();
-			cout << ", ";
-			cout << tmp->FlightDeparture();
 			cout << ", ";
 			cout << tmp->FlightDuration();
 			cout << ", ";
@@ -75,7 +75,10 @@ void FlightList::Append(string aFlightNumber, double aPrice, string aSource,stri
 	//Lets make a new flight
     	FlightNode* newFlight = new FlightNode();
 
-    	newFlight->SetVar(aFlightNumber,aPrice,aSource,aDestination,date,aDuration,aFlightCompany);
+	HubNode* hubSource = new HubNode(aSource);
+	HubNode* hubDestination = new HubNode(aDestination);
+	
+    	newFlight->SetVar(aFlightNumber,aPrice,hubSource,hubDestination,date,aDuration,aFlightCompany);
     	newFlight->SetNext(NULL);
 
     	//Temporary flight pointer

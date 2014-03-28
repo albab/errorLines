@@ -10,6 +10,7 @@
 #include "Date_Time.h"
 
 class FlightNode;
+class HubNode;
 
 using namespace std;
 

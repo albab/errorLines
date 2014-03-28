@@ -4,10 +4,8 @@ HubNode::HubNode() {
 	next = NULL;
 }
 
-HubNode::HubNode(string aName, string aLocation, HubNode* aNext) {
-	name = aName;
+HubNode::HubNode(string aLocation) {
 	location = aLocation;
-	next = aNext;
 }
 
 void HubNode::SetVar(string aName, string aLocation) { 

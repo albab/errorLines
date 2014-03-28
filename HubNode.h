@@ -17,7 +17,7 @@ class HubNode {
 
 public:
 	HubNode();
-	HubNode(string name, string location, HubNode* next);
+	HubNode(string location);
 	void SetVar(string aName, string aLocation);
 	void SetNext(HubNode* aNext);
 	string Name();

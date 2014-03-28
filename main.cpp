@@ -31,14 +31,12 @@ int main() {
 	double price;
 	int duration;
 	string durationString;
-//	HubNode* destination;
-//	HubNode* source;
 	string hubSource;
 	string hubDestination;
 	
 	ifstream flightfile ("Flight.csv");
 	if (flightfile.is_open()) {
-		while (getline(flightfile,line2) ) { // Skip first line
+		while (getline(flightfile,line2))  { // Skip first line
 				getline(flightfile,flightNumber,','); 			
 				getline(flightfile,priceString,',');
 				price = atof(priceString.c_str());
@@ -56,6 +54,8 @@ int main() {
 	
 	
 	} else {cout << "WARNING >> Can't open: Flight file"; }
+	
+	
 	getchar();
 
 	return 0;
