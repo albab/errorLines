@@ -22,7 +22,7 @@ void HubList::Print() {
     	// Single node
     	if ( tmp->Next() == NULL ) {
     		cout << tmp->Name();
-    		cout << " ---> ";
+    		cout << " --> ";
 			cout << tmp->Location();
     		cout << "NULL" << endl;
     	} else {
