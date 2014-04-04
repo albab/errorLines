@@ -76,7 +76,7 @@ int main() {
 				getline(flightfile,departure,',');
 				getline(flightfile,durationString,',');
 				duration = atoi(durationString.c_str());
-				getline(flightfile,flightCompany,',');
+				getline(flightfile,flightCompany,'\n');
 				flightList.Append(flightNumber,price,hubSource,hubDestination,departure,duration,flightCompany);
 			}
 		} 
