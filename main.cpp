@@ -7,6 +7,37 @@
 using namespace std;
 
 int main() {	
+	
+	
+	char input;
+	do {
+		cout << "Would you like to book a flight? (press y for yes or press q to quit):\n";
+		cin >> input;
+		char destination[50];
+		char date[10];
+	
+		switch(input) {
+			case 'y':
+				cout << "Where would you like to fly?\n";
+				cin >> destination;
+				cout << "What date would you like your flight? (DD/MM/2014)\n";
+				cin >> date;
+	
+				cout << "Which flight would you like?\n";
+				
+				//cout flight info here
+				
+				cout << "Would you like to check baggage?\n\n";
+	
+				break;
+		
+			case 'q':
+				break;
+		
+		}
+	} while (input != 'q');
+	
+	
 	HubList hubList;
 	
 	string line,name,location;
@@ -37,7 +68,7 @@ int main() {
 	ifstream flightfile ("Flight.csv");
 	if (flightfile.is_open()) {
 		while (getline(flightfile,line2))  { // Skip first line
-				getline(flightfile,flightNumber,','); 			
+			while(getline(flightfile,flightNumber,',')) {
 				getline(flightfile,priceString,',');
 				price = atof(priceString.c_str());
 				getline(flightfile,hubSource,',');
@@ -47,6 +78,7 @@ int main() {
 				duration = atoi(durationString.c_str());
 				getline(flightfile,flightCompany,',');
 				flightList.Append(flightNumber,price,hubSource,hubDestination,departure,duration,flightCompany);
+			}
 		} 
 	
 	flightList.Print();
@@ -54,10 +86,6 @@ int main() {
 	
 	
 	} else {cout << "WARNING >> Can't open: Flight file"; }
-
-	
-	
-	getchar();
 
 	return 0;
 }
