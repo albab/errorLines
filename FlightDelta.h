@@ -13,7 +13,7 @@ private:
 	float deltaBaggageFees;
 	int delay;
 public: 
-	float getBaggageFees();
+	float getBaggageFees(int);
 	int getDelay();
 };
 

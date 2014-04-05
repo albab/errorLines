@@ -98,3 +98,38 @@ void FlightList::Append(string aFlightNumber, double aPrice, string aSource,stri
     		head = newFlight;
     	}
 }
+
+
+void FlightList::PrintDestinations() {
+	
+    	// Temp pointer
+    	FlightNode *tmp = head;
+
+    	// Empty list?
+    	if ( tmp == NULL ) {
+    		cout << "EMPTY" << endl;
+    		return;
+    	}
+
+    	// Single node
+    	if ( tmp->Next() == NULL ) {
+    		cout << tmp->FlightDestination();
+    		cout << " --> ";
+    		cout << "NULL" << endl;
+    	}
+    	else {
+    	// Traverse and print 
+    		do {
+	
+			cout << tmp->FlightDestination();
+        		cout << "\n";
+        		tmp = tmp->Next();
+    		} while ( tmp != NULL );
+
+    		cout << "NULL" << endl;
+    }
+	
+	
+}
+
+

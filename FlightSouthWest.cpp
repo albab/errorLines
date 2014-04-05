@@ -1,6 +1,10 @@
 #include "FlightSouthWest.h"
 
-float FlightSouthWest::getBaggageFees() {
+#define baseCost 25;
+
+float FlightSouthWest::getBaggageFees(int bags)
+{
+	southWestBaggageFees = bags * baseCost;
 	return southWestBaggageFees;
 }
 

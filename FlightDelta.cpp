@@ -1,6 +1,8 @@
 #include "FlightDelta.h"
+#define baseCost 0;
 
-float FlightDelta::getBaggageFees() {
+float FlightDelta::getBaggageFees(int bags) {
+	deltaBaggageFees = bags * baseCost;
 	return deltaBaggageFees;
 }
 
