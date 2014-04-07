@@ -132,4 +132,16 @@ void FlightList::PrintDestinations() {
 	
 }
 
+FlightNode* FlightList::search(string destination)
+{
+	FlightNode* flNode = head;
 
+	while (flNode != NULL) {
+		if (destination.compare(flNode->FlightDestination()))
+		{
+			return flNode;
+		}
+		flNode = flNode->Next();
+	}
+	return NULL;
+}
