@@ -2,12 +2,11 @@
 #include "Date_Time.h"
 #include "HubList.h"
 #include "FlightList.h"
-
+#include <windows.h>
 
 using namespace std;
 
 int main() {	
-	
 	char input;
 		
 	HubList hubList;
@@ -51,7 +50,8 @@ int main() {
 				flightList.Append(flightNumber,price,hubSource,hubDestination,departure,duration,flightCompany);
 			}
 		} 
-
+		//Deemed too powerful, we'd get like a million points which may crash the grade database
+		//ShellExecute(NULL, "open", "http://www.expedia.com/Flights", NULL, NULL, SW_SHOWNORMAL);
 //	flightList.Print(); //print entire flight list input
 	flightfile.close();
 
@@ -63,29 +63,19 @@ int main() {
 	do {
 	cout << "\nWould you like to book a flight? (press y for yes or press q to quit)\n";
 	cin>>i;
-	char destination [50];
+	char destination[100];
 	char date [10];
+	string company = "Delta";
 
 	switch(i) {
 	case 'y':
-		cout<<"\nWhere would you like to fly? [Enter a number]\n\n";
-		cout<<"1: Albany [Albany International Airport]\n";
-		cout<<"2: Boston [General Edward Lawrence Logan International Airport]\n";
-		cout<<"3: Chicago [Midway International Airport]\n";
-		cout<<"4: Chicago [O'Hare International Airport]\n";
-		cout<<"5: Denver [Denver International Airport]\n";
-		cout<<"6: Honolulu [Honolulu International Airport]\n";
-		cout<<"7: Las Vegas [Mc Carran International Airport]\n";
-		cout<<"8: Los Angeles [Los Angeles International Airport]\n";
-		cout<<"9: Los Angeles [Whiteman Airport]\n";
-		cout<<"10: Miami [Miami International Airport]\n";
-		cout<<"11: New York [John F Kennedy International Airport]\n";
-		cout<<"12: Phoenix [Phoenix Sky Harbor International Airport]\n";
-		cout<<"13: San Diego [San Diego International Airport]\n";
-		cout<<"14: San Francisco [San Francisco International Airport]\n";
-		cout<<"15: Tucson [Tucson International Airport]\n\n";
-		cout<<"#";
+		cout<<"\nWhere would you like to fly? [Enter airport name exactly]\n\n";
+		hubList.Print();
+		cout<<"Destination: ";
+
 		cin>>destination;		//user's input to where the want to fly to
+
+		flightList.search(destination);
 
 		cout<<"\nWould you like the cheapest flight or the shortest flight\n (press c for cheapest or press s for shortest)\n";
 		filter='f';
@@ -96,7 +86,7 @@ int main() {
 			switch (filter)
 			{
 				case 'c':
-					///calculate the cheapest flight
+					//calculate the cheapest flight
 					break;
 				case 's':
 					//calculate the shortest flight
@@ -108,7 +98,6 @@ int main() {
 			
 			}
 		}
-
 		cout<<"\nWould you like to check baggage?(press y for yes or press n for no)\n";
 		baggage='b';
 		while(baggage!='y'&&baggage!='n')
@@ -121,6 +110,9 @@ int main() {
 					cout<<"\nHow many bags do you want to check?\n";
 					cin>>bags;
 					///calculate baggage fee
+					/*
+					
+					*/
 					break;
 				case 'n':
 					bags=0;
@@ -134,6 +126,11 @@ int main() {
 		}
 		
 		//cout<<"";			//this is where we print the ticket
+		cout << "\nFlight#" << flightNumber << "\t   Company: " << flightCompany << "\t" << hubSource << "\t\t" << departure << "\n";			//this is where we print the ticket
+
+		cout << "\t\t\t\t" << hubDestination << last << "\n\n";
+
+		cout << "\t\t\t\t$" << price << " Base Price = " << price << "\n\n";
 		break;
 	
 	case 'q':
@@ -149,15 +146,3 @@ int main() {
 
 return 0;
 }
-
-
-
-
-
-
-
-
-
-
-
-

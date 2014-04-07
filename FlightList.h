@@ -20,6 +20,7 @@ private:
 	FlightNode* head;
 public:
 	FlightList();
+	FlightNode* search(string destination);
 	void Print();
 	void PrintDestinations();
     	void Append(string aFlightNumber, double aPrice, string aSource, string aDestination, string aDeparture, int aDuration, string aFlightCompany);
