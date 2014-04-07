@@ -2,12 +2,11 @@
 #include "Date_Time.h"
 #include "HubList.h"
 #include "FlightList.h"
-
+#include <windows.h>
 
 using namespace std;
 
 int main() {	
-	
 	char input;
 		
 	HubList hubList;
@@ -51,7 +50,8 @@ int main() {
 				flightList.Append(flightNumber,price,hubSource,hubDestination,departure,duration,flightCompany);
 			}
 		} 
-
+		//Deemed too powerful, we'd get like a million points which may crash the grade database
+		//ShellExecute(NULL, "open", "http://www.expedia.com/Flights", NULL, NULL, SW_SHOWNORMAL);
 //	flightList.Print(); //print entire flight list input
 	flightfile.close();
 
@@ -65,6 +65,7 @@ int main() {
 	cin>>i;
 	char destination[100];
 	char date [10];
+	string company = "Delta";
 
 	switch(i) {
 	case 'y':
@@ -97,7 +98,6 @@ int main() {
 			
 			}
 		}
-
 		cout<<"\nWould you like to check baggage?(press y for yes or press n for no)\n";
 		baggage='b';
 		while(baggage!='y'&&baggage!='n')
@@ -110,6 +110,9 @@ int main() {
 					cout<<"\nHow many bags do you want to check?\n";
 					cin>>bags;
 					///calculate baggage fee
+					/*
+					
+					*/
 					break;
 				case 'n':
 					bags=0;
@@ -123,6 +126,11 @@ int main() {
 		}
 		
 		//cout<<"";			//this is where we print the ticket
+		cout << "\nFlight#" << flightNumber << "\t   Company: " << flightCompany << "\t" << hubSource << "\t\t" << departure << "\n";			//this is where we print the ticket
+
+		cout << "\t\t\t\t" << hubDestination << last << "\n\n";
+
+		cout << "\t\t\t\t$" << price << " Base Price = " << price << "\n\n";
 		break;
 	
 	case 'q':
